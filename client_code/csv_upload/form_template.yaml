@@ -1,0 +1,222 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'UADLUH,VJYXJX'}
+    name: label_1
+    properties:
+      align: right
+      background: ''
+      bold: false
+      border: ''
+      font: ''
+      font_size: null
+      foreground: ''
+      icon: ''
+      icon_align: left
+      italic: false
+      role: null
+      spacing_above: small
+      spacing_below: small
+      text: |
+        File to upload:
+      tooltip: ''
+      underline: false
+      visible: true
+    type: Label
+  - event_bindings: {change: file_loader_1_change}
+    layout_properties: {grid_position: 'UADLUH,QWSOHZ'}
+    name: file_loader_1
+    properties:
+      align: left
+      background: ''
+      bold: false
+      border: ''
+      enabled: false
+      file: null
+      file_types: null
+      files: []
+      font: ''
+      font_size: null
+      foreground: ''
+      icon: fa:upload
+      icon_align: left
+      italic: false
+      multiple: false
+      role: null
+      show_state: true
+      spacing_above: small
+      spacing_below: small
+      text: Upload
+      tooltip: please input a table name before uploading data.
+      underline: false
+      visible: true
+    type: FileLoader
+  - components: []
+    layout_properties: {grid_position: 'ENZICS,DPRLPX'}
+    name: column_panel_1
+    properties: {col_widths: '{}'}
+    type: ColumnPanel
+  - components:
+    - event_bindings: {clicked: radio_button_browser_clicked}
+      layout_properties: {grid_position: 'NSHCAH,SGCTSM'}
+      name: radio_button_browser
+      properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', group_name: radioGroup_processing, italic: false, role: null, selected: true, spacing_above: small, spacing_below: small, text: Browser Processing, tooltip: 'use this to parse and send each line directly to the app table selected, from your local machine', underline: false, value: process_file_browser, visible: true}
+      type: RadioButton
+    - event_bindings: {clicked: radio_button_server_clicked}
+      layout_properties: {grid_position: 'NSHCAH,ZBQYNQ'}
+      name: radio_button_server
+      properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', group_name: radioGroup_processing, italic: false, role: null, selected: false, spacing_above: small, spacing_below: small, text: Server Module Processing (With Auto Timeout Adjust), tooltip: use this to parse a list of rows then send that list to the anvil server to be processed (experimental), underline: false, value: process_file_server_module, visible: true}
+      type: RadioButton
+    - layout_properties: {grid_position: 'NSHCAH,LKSLVI AUPZRO,XYHZBT'}
+      name: spacer_3
+      properties: {height: 56}
+      type: Spacer
+    - layout_properties: {grid_position: 'NSHCAH,LKSLVI PDBAGV,VWONXH'}
+      name: label_2
+      properties:
+        align: center
+        background: ''
+        bold: true
+        border: ''
+        font: ''
+        font_size: 18
+        foreground: ''
+        icon: ''
+        icon_align: left
+        italic: false
+        role: input-prompt
+        spacing_above: small
+        spacing_below: small
+        text: |
+          Select Parse Settings:
+        tooltip: ''
+        underline: false
+        visible: true
+      type: Label
+    - layout_properties: {grid_position: 'YNUQNU,JKJMYY RSAHCE,ZBJAMC'}
+      name: check_box_headers_toggle
+      properties: {align: left, allow_indeterminate: false, background: '', bold: false, border: '', checked: true, enabled: true, font: '', font_size: null, foreground: '', italic: false, role: null, spacing_above: small, spacing_below: small, text: 'Has Headers?', tooltip: 'Does the first line of the csv contain the column names?', underline: false, visible: true}
+      type: CheckBox
+    - layout_properties: {grid_position: 'YNUQNU,JKJMYY WNGILV,QEPOUQ'}
+      name: check_box_delimiter_quote
+      properties: {align: left, allow_indeterminate: false, background: '', bold: false, border: '', checked: true, enabled: true, font: '', font_size: null, foreground: '', italic: false, role: null, spacing_above: small, spacing_below: small, text: 'Quote Encapsulated?', tooltip: leave this checked if your data has "doublequotes" around text in the file., underline: false, visible: true}
+      type: CheckBox
+    - event_bindings: {change: text_box_table_name_change}
+      layout_properties: {grid_position: 'YNUQNU,VANVWF'}
+      name: text_box_table_name
+      properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: Data Table Name, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: enter the name of the table you would like to insert data into., type: text, underline: false, visible: true}
+      type: TextBox
+    - layout_properties: {grid_position: 'YNUQNU,ROEPTG'}
+      name: label_3
+      properties: {align: right, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: input-prompt, spacing_above: small, spacing_below: small, text: 'Separator :', tooltip: '', underline: false, visible: true}
+      type: Label
+    - layout_properties: {grid_position: 'YNUQNU,QEGMNJ'}
+      name: drop_down_separator_select
+      properties:
+        align: right
+        background: ''
+        bold: false
+        border: ''
+        enabled: true
+        font: ''
+        font_size: null
+        foreground: ''
+        include_placeholder: false
+        italic: false
+        items: ['comma (,)', tab (\t), space ( ), pipe (|)]
+        placeholder: ''
+        role: null
+        spacing_above: small
+        spacing_below: small
+        tooltip: if your csv file is seperated by something other than a comma, select it here
+        underline: false
+        visible: true
+      type: DropDown
+    layout_properties: {grid_position: 'DAFCIW,QZPSZD'}
+    name: card_1
+    properties: {col_widths: '{"JKJMYY":14,"VANVWF":21,"QEGMNJ":7,"ROEPTG":9,"SGCTSM":10,"ZBQYNQ":15,"LKSLVI":35}', role: card}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'DISJVA,OYDHKQ'}
+      name: label_4
+      properties: {align: right, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: subheading, spacing_above: small, spacing_below: small, text: To use 'Browser Processing' You Must Set the table permissions for 'Forms' like ----->, tooltip: '', underline: false, visible: true}
+      type: Label
+    - components:
+      - layout_properties: {grid_position: 'JIGHBF,XPWMJK'}
+        name: image_1
+        properties: {background: '', border: '', display_mode: shrink_to_fit, foreground: '', height: 145, horizontal_align: center, role: null, source: 'data:image/jpeg;base64,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', spacing_above: small, spacing_below: small, tooltip: click here to find out more about permissions, vertical_align: center, visible: true}
+        type: Image
+      layout_properties: {grid_position: 'DISJVA,MEHPVL'}
+      name: link_1
+      properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '{}', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, url: 'https://anvil.works/docs/data-tables/data-security#data-security-with-data-tables', visible: true, wrap_on: mobile}
+      type: Link
+    layout_properties: {grid_position: 'JAQSDG,PLMEHK'}
+    name: column_panel_browser_table_permissions
+    properties: {background: '', border: '', col_spacing: medium, col_widths: '{}', foreground: '', role: card, spacing_above: small, spacing_below: small, tooltip: '', visible: true, wrap_on: mobile}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'KQOSRO,BEPUPS'}
+      name: spacer_1_copy
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'KQOSRO,HUMZME'}
+      name: label_6
+      properties: {align: center, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '( this is an experimental feature, please use at your own risk )', tooltip: '', underline: false, visible: true}
+      type: Label
+    - layout_properties: {grid_position: 'KQOSRO,YNBWEJ'}
+      name: spacer_1
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'KQOSRO,ZGDKMR'}
+      name: label_5
+      properties: {align: right, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: subheading, spacing_above: small, spacing_below: small, text: Automatic Timeout Adjust will use this many rows ----->, tooltip: '', underline: false, visible: true}
+      type: Label
+    - layout_properties: {grid_position: 'KQOSRO,YUQFHV'}
+      name: text_box_max_rows
+      properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '500', role: dense, spacing_above: small, spacing_below: small, text: '500', tooltip: '', type: number, underline: false, visible: true}
+      type: TextBox
+    - layout_properties: {grid_position: 'KQOSRO,ANPYKL'}
+      name: check_box_pause_automatic_increase
+      properties: {align: left, allow_indeterminate: false, background: '', bold: false, border: '', checked: false, enabled: true, font: '', font_size: 12, foreground: '', italic: false, role: null, spacing_above: small, spacing_below: small, text: Pause Automatic Increases, tooltip: '', underline: false, visible: true}
+      type: CheckBox
+    - layout_properties: {grid_position: 'KQOSRO,BLMSVV'}
+      name: spacer_2
+      properties: {height: 32}
+      type: Spacer
+    layout_properties: {grid_position: 'VGDISE,KKPTGE'}
+    name: column_panel_server_settings
+    properties: {background: '', border: '', col_spacing: medium, col_widths: '{"ZGDKMR":35,"YUQFHV":10,"BLMSVV":5,"YNBWEJ":5,"ANPYKL":17,"HUMZME":23,"BEPUPS":5}', foreground: '', role: card, spacing_above: small, spacing_below: small, tooltip: '', visible: false, wrap_on: mobile}
+    type: ColumnPanel
+  - event_bindings: {click: button_abort_operation_click}
+    layout_properties: {grid_position: 'ELTPCW,WVPJDT'}
+    name: button_abort_operation
+    properties: {align: center, background: '#e60505', bold: false, border: '', enabled: false, font: '', font_size: null, foreground: '', icon: 'fa:exclamation', icon_align: left, italic: false, role: primary-color, spacing_above: small, spacing_below: small, text: ABORT, tooltip: '', underline: false, visible: true}
+    type: Button
+  - layout_properties: {grid_position: 'RGGQXP,VGAWUB'}
+    name: label_console
+    properties: {align: center, background: '', bold: false, border: '', font: Lucida Console, font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: headline, spacing_above: small, spacing_below: none, text: 'Console:', tooltip: '', underline: false, visible: true}
+    type: Label
+  - layout_properties: {grid_position: 'JLGHKK,IONCXU'}
+    name: text_area_print
+    properties: {align: left, auto_expand: false, background: '#010101', bold: true, border: '', enabled: false, font: Lucida Console, font_size: null, foreground: '#12ce4b', height: '280', italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+    type: TextArea
+  - event_bindings: {click: button_abort_operation2_click}
+    layout_properties: {grid_position: 'IUHWRG,RFSHCL'}
+    name: button_abort_operation2
+    properties: {align: center, background: '#e60505', bold: false, border: '', enabled: false, font: '', font_size: null, foreground: '', icon: 'fa:exclamation', icon_align: left, italic: false, role: primary-color, spacing_above: small, spacing_below: small, text: ABORT, tooltip: '', underline: false, visible: true}
+    type: Button
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {background: '', border: '', col_spacing: small, col_widths: '{}', foreground: '', role: null, spacing_above: small, spacing_below: small, tooltip: '', visible: true, wrap_on: mobile}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: title}
+  name: label_7
+  properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: true, role: headline, spacing_above: small, spacing_below: small, text: Anvil CSV To Table Example, tooltip: '', underline: false, visible: true}
+  type: Label
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true
